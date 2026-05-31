@@ -7,7 +7,7 @@
 ![Free](https://img.shields.io/badge/API-100%25%20Free-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-> Upload any PDF and have a full conversation with it — powered by LangChain, **Google Gemini 1.5 Flash (FREE)**, and FAISS vector search with local HuggingFace embeddings.
+> Upload any PDF and have a full conversation with it — powered by LangChain, **gemini-2.5-flash(FREE)**, and FAISS vector search with local HuggingFace embeddings.
 
 ---
 
@@ -18,7 +18,7 @@
 - 💬 **Conversation Memory** — ask follow-up questions naturally
 - 📎 **Source Citations** — answers include the page numbers used
 - 🔒 **API Key Safe** — entered in UI at runtime, never stored or committed
-- 💸 **100% Free** — Gemini 1.5 Flash free tier: 1500 requests/day
+- 💸 **100% Free** — gemini-2.5-flash free tier: 1500 requests/day
 
 ---
 
@@ -75,7 +75,7 @@ GOOGLE_API_KEY=AIza...
 |------|------|------|
 | **Streamlit** | Frontend UI | Free |
 | **LangChain** | RAG pipeline | Free |
-| **Gemini 1.5 Flash** | LLM (chat + answers) | **Free** (1500 req/day) |
+| **gemini-2.5-flash** | LLM (chat + answers) | **Free** (1500 req/day) |
 | **HuggingFace Embeddings** | Text embeddings | **Free** (runs locally) |
 | **FAISS** | Vector similarity search | Free |
 | **PyPDF** | PDF parsing | Free |
