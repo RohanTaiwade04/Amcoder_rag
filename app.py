@@ -9,14 +9,14 @@ import tempfile
 import os
 from dotenv import load_dotenv
 
-# ── Load API key ──────────────────────────────────────────────────────────────
+#  Load API key 
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 
-# ── Page config ───────────────────────────────────────────────────────────────
+#  Page config
 st.set_page_config(page_title="DocMind – Chat with your PDF", page_icon="📄", layout="wide")
 
-# ── Custom CSS ────────────────────────────────────────────────────────────────
+#  Custom CSS 
 st.markdown("""
 <style>
     .stApp { background-color: #0f1117; }
@@ -43,12 +43,12 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ── Session state ─────────────────────────────────────────────────────────────
+#  Session state 
 for key, val in [("chat_history", []), ("chain", None), ("doc_name", None)]:
     if key not in st.session_state:
         st.session_state[key] = val
 
-# ── Sidebar ───────────────────────────────────────────────────────────────────
+#  Sidebar 
 with st.sidebar:
     st.markdown("## 📄 DocMind")
     st.markdown("### 📚 How it works")
@@ -69,7 +69,7 @@ with st.sidebar:
             st.session_state.doc_name = None
             st.rerun()
 
-# ── Main UI ───────────────────────────────────────────────────────────────────
+#  Main UI 
 st.markdown("# 📄 DocMind")
 st.markdown("### Chat with your PDF using LangChain + Gemini ⚡")
 st.divider()
@@ -78,7 +78,7 @@ if not GOOGLE_API_KEY:
     st.error("⚠️ API key not found! Create a `.env` file with `GOOGLE_API_KEY=AIza...`")
     st.stop()
 
-# ── PDF Upload ────────────────────────────────────────────────────────────────
+#  PDF Upload 
 if not st.session_state.chain:
     uploaded_file = st.file_uploader("Upload a PDF to get started", type=["pdf"])
 
@@ -138,7 +138,7 @@ if not st.session_state.chain:
         </div>
         """, unsafe_allow_html=True)
 
-# ── Chat ──────────────────────────────────────────────────────────────────────
+#  Chat 
 if st.session_state.chain:
     st.markdown(f"""
     <div class="status-box">
